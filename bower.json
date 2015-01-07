@@ -1,0 +1,21 @@
+{
+  "name": "botb2015",
+  "version": "0.0.0",
+  "homepage": "https://github.com/BaseOfTheBass/botb2015",
+  "authors": [
+    "Akinori Kato <slowbirds@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dev/vendors",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize.css": "~3.0.2"
+  }
+}

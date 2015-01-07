@@ -1,0 +1,36 @@
+{
+  "name": "botb2015",
+  "version": "0.0.0",
+  "description": "botb website 2015",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BaseOfTheBass/botb2015.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BaseOfTheBass/botb2015/issues"
+  },
+  "homepage": "https://github.com/BaseOfTheBass/botb2015",
+  "devDependencies": {
+    "browserify": "^8.0.3",
+    "gulp": "^3.8.10",
+    "gulp-coffee": "^2.2.0",
+    "gulp-concat": "^2.4.3",
+    "gulp-imagemin": "^2.1.0",
+    "gulp-jade": "^0.10.0",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-notify": "^2.1.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-streamify": "0.0.5",
+    "gulp-stylus": "^1.3.4",
+    "gulp-uglify": "^1.0.2",
+    "gulp-watch": "^3.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}
