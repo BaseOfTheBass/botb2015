@@ -1,5 +1,6 @@
 *.gem
 *.rbc
+.DS_Store
 /.config
 /coverage/
 /InstalledFiles
@@ -7,7 +8,14 @@
 /spec/reports/
 /test/tmp/
 /test/version_tmp/
-/tmp/
+.tmp
+
+## Bower
+/dev/
+
+## Node.js
+/node_modules/
+npm-debug.log
 
 ## Specific to RubyMotion:
 .dat*
