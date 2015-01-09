@@ -2,6 +2,7 @@
 source "https://rubygems.org"
 
 gem 'sinatra'
+gem 'fb_graph'
 gem 'rake'
 gem 'rack'
 gem 'rack-test'
