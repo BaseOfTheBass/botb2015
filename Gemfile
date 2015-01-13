@@ -2,7 +2,6 @@
 source "https://rubygems.org"
 
 gem 'sinatra'
-gem 'fb_graph'
 gem 'rake'
 gem 'rack'
 gem 'rack-test'
@@ -12,7 +11,7 @@ group :production do
 end
 
 group :development do
-      gem 'shotgun'
+    gem 'sinatra-contrib', require: 'sinatra/reloader'
 end
 
 group :test, :development do
