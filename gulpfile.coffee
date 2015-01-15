@@ -18,16 +18,16 @@ coffeeify  = require 'coffeeify'
 source     = require 'vinyl-source-stream'
 streamify  = require 'gulp-streamify'
 
-pub_dir = 'app/public'
+pub_dir  = 'app/public'
 view_dir = 'app/views'
 
 srcdata = {
-  'coffee': 'source/coffee/**/*.coffee'
-  'stylus': 'source/stylus/**/*.stylus'
-  'jade'  : 'source/jade/**/*.jade'
-  'image' : 'source/resources/**/*'
-  'pjs'   : 'source/pjs/**/*'
-  'bower' : ['dev/vendors/**/*','bower_components/**/*']
+  'coffee'   : 'source/coffee/**/*.coffee'
+  'stylus'   : 'source/stylus/**/*.stylus'
+  'jade'     : 'source/jade/**/*.jade'
+  'image'    : 'source/resources/**/*'
+  'bower'    : ['dev/vendors/**/*','bower_components/**/*']
+  'vendorjs' : 'source/javascript/**/*'
 }
 
 gulp.task 'compile-js', () ->
@@ -71,6 +71,10 @@ gulp.task 'move-vendors', () ->
   gulp.src srcdata.bower
     .pipe gulp.dest(pub_dir+'/vendors')
 
+gulp.task 'move-vendorjs', () ->
+  gulp.src srcdata.vendorjs
+    .pipe gulp.dest(pub_dir+'/scripts/vendors')
+
 gulp.task 'webserver', () ->
   gulp.src pub_dir
     .pipe server(livereload:true)
@@ -80,6 +84,7 @@ gulp.task 'compile', [
   'compile-css'
   'compile-html'
   'move-vendors'
+  'move-vendorjs'
   'compile-image'
 ]
 gulp.task 'watch', () ->
@@ -88,6 +93,7 @@ gulp.task 'watch', () ->
   gulp.watch srcdata.jade, ['compile-html']
   gulp.watch srcdata.image, ['compile-image']
   gulp.watch srcdata.bower, ['move-vendors']
+  gulp.watch srcdata.vendorjs, ['move-vendorjs']
 
 gulp.task 'default', [
   'compile'
