@@ -48,7 +48,8 @@ class Helper
   setLoading: ($target) ->
     $loading = document.createElement "div"
     $loading.classList.add "spinner"
-    $loading.innerHTML = '<div class="bounce1"></div><div class="bounce1"></div><div class="bounce1"></div>'
+    div = '<div class="bounce1"></div>'
+    $loading.innerHTML = "#{div}#{div}#{div}"
     $target.appendChild $loading
     return $loading
 

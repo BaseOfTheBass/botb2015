@@ -1,23 +1,30 @@
 gulp   = require 'gulp'
 jade   = require 'gulp-jade'
 coffee = require 'gulp-coffee'
+coffeelint = require 'gulp-coffeelint'
 uglify = require 'gulp-uglify'
 stylus  = require 'gulp-stylus'
 minify = require 'gulp-minify-css'
 concat = require 'gulp-concat'
+
+# watcher
 watch  = require 'gulp-watch'
-#server = require 'gulp-webserver'
-#livereload = require 'gulp-livereload'
+server = require 'gulp-webserver'
+livereload = require 'gulp-livereload'
+
+#util
 plumber = require 'gulp-plumber'
 notify  = require 'gulp-notify'
 imagemin= require 'gulp-imagemin'
 rename  = require 'gulp-rename'
 
+#browserify
 browserify = require 'browserify'
 coffeeify  = require 'coffeeify'
 source     = require 'vinyl-source-stream'
 streamify  = require 'gulp-streamify'
 
+# dir settings
 pub_dir  = 'app/public'
 view_dir = 'app/views'
 
@@ -30,6 +37,11 @@ srcdata = {
   'vendorjs' : 'source/javascript/**/*'
 }
 
+gulp.task 'lint-coffee', () ->
+  gulp.src [srcdata.coffee]
+    .pipe coffeelint()
+    .pipe coffeelint.reporter()
+
 gulp.task 'compile-js', () ->
   compileFileName = 'application.min.js'
   browserify(
@@ -39,7 +51,7 @@ gulp.task 'compile-js', () ->
     .transform 'coffeeify'
     .bundle()
     .pipe plumber(errorHandler: notify.onError '<%= error.message %>')
-    .pipe source 'application.min.js'
+    .pipe source compileFileName
     .pipe streamify uglify({mangle: false})
     .pipe gulp.dest pub_dir+'/scripts'
 
@@ -80,6 +92,7 @@ gulp.task 'webserver', () ->
     .pipe server(livereload:true)
 
 gulp.task 'compile', [
+  'lint-coffee'
   'compile-js'
   'compile-css'
   'compile-html'
@@ -88,9 +101,10 @@ gulp.task 'compile', [
   'compile-image'
 ]
 gulp.task 'watch', () ->
-  gulp.watch srcdata.stylus, ['compile-css']
+  gulp.watch srcdata.coffee, ['clint-coffee']
   gulp.watch srcdata.coffee, ['compile-js']
   gulp.watch srcdata.jade, ['compile-html']
+  gulp.watch srcdata.stylus, ['compile-css']
   gulp.watch srcdata.image, ['compile-image']
   gulp.watch srcdata.bower, ['move-vendors']
   gulp.watch srcdata.vendorjs, ['move-vendorjs']
