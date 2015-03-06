@@ -1,3 +1,10 @@
+## Bower
+/dev/
+/bower_components
+
+## other
+source/.tmp
+
 ### https://raw.github.com/github/gitignore/4a9d41f8947b9fe5850914abb7e59a59e1ae2cb6/ruby.gitignore
 
 *.gem
@@ -94,10 +101,3 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-
-## Bower
-/dev/
-/bower_components
-
-## other
-source/.tmp
