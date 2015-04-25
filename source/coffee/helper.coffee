@@ -5,9 +5,9 @@ class Helper
   $id: (id) ->
     return document.getElementById id
 
-  getJson: (type,cb) ->
+  getJson: (url,cb) ->
     xhr = new XMLHttpRequest()
-    xhr.open 'GET', "/api/proxy/#{type}"
+    xhr.open 'GET', url
 
     xhr.onreadystatechange = () ->
       if xhr.readyState == 4 && xhr.status == 200
@@ -48,8 +48,10 @@ class Helper
   setLoading: ($target) ->
     $loading = document.createElement "div"
     $loading.classList.add "spinner"
-    bounce = '<div class="bounce1"></div>'
-    $loading.innerHTML = bounce+bounce+bounce
+    bounce1 = '<div class="bounce1"></div>'
+    bounce2 = '<div class="bounce2"></div>'
+    bounce3 = '<div class="bounce3"></div>'
+    $loading.innerHTML = bounce1+bounce2+bounce3
     $target.appendChild $loading
     return $loading
 

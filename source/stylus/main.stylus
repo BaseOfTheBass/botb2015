@@ -33,7 +33,7 @@ vendor(prop, args)
 // ------------------------------
 
 html
-  background: ColorDarkPrimary url(/resources/background.jpg) center center no-repeat fixed
+  background: ColorDivider
   background-size: cover
   height: 100%
   font-size: base_font
@@ -53,7 +53,7 @@ h1
   font-size: (base_font * 2)
   margin: 0
   padding: 24px
-  background: ColorLightPrimary
+
   a
     display: block
     text-align: center
@@ -72,7 +72,7 @@ h3
 // Layouts
 // ------------------------------
 #container
-  margin: 20px
+  margin: 2%
   padding: 0
 
 .content
@@ -81,6 +81,7 @@ h3
   font-size: 1rem
 
 ul#navigation
+  display: none
   margin: 12px 0
   padding: 0 24px
   background: ColorLightPrimary
@@ -103,12 +104,15 @@ ul#navigation
   margin: 0
 
 .member
-  margin: 12px 0
+  margin: 2%
   background: ColorLightPrimary
   padding: 0
   border-radius: 8px
+  width: 46%
+  min-width:300px
+  float: left
 
-  .profileImg
+  .memberIcon
     background: ColorPrimary
     border-radius: 8px 8px 0 0
     text-align: center
@@ -119,23 +123,64 @@ ul#navigation
       width: 180px
       border-radius: 180px;
 
-  h3
-    text-align: center
-    margin: 0
-    padding: 8px 0
+    h3
+      text-align: center
+      margin: 0
+      padding: 8px 0 0
+    .memberTags
+      margin: 0
+      padding: 0
 
 
-  .profileIntro
+  .memberInfo
     margin: 8px 24px
+    .memberDescription
+      width: 42%
+      //display: inline-block
+      float: left
+    .memberLinks
+      width: 42%
+      //display: inline-block
+      float: right
+      list-style: none
+      li
+        margin: 3px
+        list-style: none
+        a
+          color: ColorPrimaryText
+          display: block
+          padding: 5px
+          &:hover
+            background: rgba(256,256,256,0.3)
+    &:after
+      content: "."
+      display: block
+      height: 1px
+      overflow: hidden
+      clear: both
 
-  .profileLinks
-    margin: 0 24px
+.memberProduct
+  .memberProductImage
+    width: 40%
     text-align: center
-    li
-      display: inline-block
-      margin: 3px
-      a
-        color: ColorPrimaryText
+    float: left
+  h3
+    width: 60%
+    float: left
+    padding: 20px 0 0
+    font-size: 1rem
+    font-weight: normal
+  &:after
+    content: "."
+    display: block
+    height: 1px
+    overflow: hidden
+    clear: both
+
+@media screen and (max-width: 640px)
+  .member
+    width: 98%
+
 
 
 // ------------------------------
@@ -149,6 +194,11 @@ ul#navigation
     width: 18px
     height: 18px
     background-color: rgba(255,255,255,0.4)
+    filter: blur(1px)
+    -webkit-filter: blur(1px)
+    -moz-filter: blur(1px)
+    -o-filter: blur(1px)
+    -ms-filter: blur(1px)
 
     border-radius: 100%
     display: inline-block
@@ -163,6 +213,10 @@ ul#navigation
   .bounce2
     -webkit-animation-delay: -0.16s
     animation-delay: -0.16s
+  .bounce3
+    -webkit-animation-delay: -0.08s
+    animation-delay: -0.08s
+
 
 
 // ------------------------------
