@@ -170,12 +170,16 @@ ul#navigation
     padding: 20px 0 0
     font-size: 1rem
     font-weight: normal
-  &:after
-    content: "."
+  a
     display: block
-    height: 1px
-    overflow: hidden
-    clear: both
+    min-height: 1px
+    &:after
+      content: "."
+      display: block
+      height: 1px
+      overflow: hidden
+      clear: both
+
 
 @media screen and (max-width: 640px)
   .member

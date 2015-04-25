@@ -124,6 +124,7 @@ class Members
 
     # remove loading content
     wrap = document.createElement("a")
+    wrap.href=url
     imageWrap = document.createElement("p")
     imageWrap.className = "memberProductImage"
     imageWrap.innerHTML = "<img src='#{thumb}' width='120'>"
