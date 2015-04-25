@@ -118,9 +118,9 @@ class Members
     json  = JSON.parse json
     if !json.accounts
       return this
-    url   = json.accounts.url
-    thumb = json.accounts.thumbnail
-    title_str = json.accounts.title
+    url   = json.accounts[0].url
+    thumb = json.accounts[0].thumbnail
+    title_str = json.accounts[0].title
 
     # remove loading content
     wrap = document.createElement("a")

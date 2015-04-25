@@ -35,7 +35,7 @@ class MainApp < Sinatra::Base
 
   get '/api/latest/*' do
     accounts   = params[:splat][0]
-    max       = params['max'] ? params['max'].to_i : 3
+    max       = params['max'] ? params['max'].to_i : 1
 
     datafetch = Datafetch.new()
     res = datafetch.getLatestProducts(max,accounts)
