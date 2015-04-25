@@ -162,7 +162,7 @@ class Datafetch
 
     products = {id: accounts['id'], accounts: latest}
     ret = latest.sort_by { |hash| -hash['timestamp'].to_i }
-    ret = {id: accounts['id'], accounts: ret[0]}
+    ret = {id: accounts['id'], accounts: ret}
     return ret.to_json
   end
 
