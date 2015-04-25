@@ -1,0 +1,48 @@
+{"members":[
+  {
+    "id": 1,
+    "name": "leo9",
+    "image": "/resources/profiles/leo9.jpg",
+    "bio": "ORGANIZE EVENTS",
+    "tags": ["organize"],
+    "media":{"hoge":"hoge"}
+  },{
+    "id": 2,
+    "name": "AkiHito*",
+    "image": "/resources/profiles/akihito.jpg",
+    "bio": "アゲアゲ揚げ太郎",
+    "tags": ["DJ"],
+    "media":{
+      "mixcloud": "akihitofukui395"
+    }
+  },{
+    "id": 3,
+    "name": "Nori-Nori",
+    "image": "/resources/profiles/nori-nori.jpg",
+    "bio": "リキッドドラムン大好きっ子",
+    "tags": ["DJ","Drum"],
+    "media":{
+      "mixcloud": "norifumikomine7"
+    }
+  },{
+    "id": 4,
+    "name": "Peachman",
+    "image": "/resources/profiles/peachman.jpg",
+    "bio": "変態",
+    "tags": ["VJ","Programming"],
+    "media":{
+      "vimeo": "user3132152"
+    }
+  },{
+    "id": 5,
+    "name": "slowbirds",
+    "image": "/resources/profiles/slowbirds.jpg",
+    "bio": "根暗",
+    "tags": ["DJ","Programming"],
+    "media":{
+      "soundcloud": "slowbirds",
+      "vimeo": "slowbirds",
+      "mixcloud": "slowbirds"
+    }
+  }
+]}
