@@ -58,6 +58,8 @@ h1
     display: block
     text-align: center
 
+  img
+
 h2
   font-size: 2.4rem
   color: ColorAccent
@@ -180,8 +182,16 @@ ul#navigation
       overflow: hidden
       clear: both
 
+.copyrights
+  font-size: 0.8rem
+  text-align: center
+  padding: 24px 0 12px
 
 @media screen and (max-width: 640px)
+  h1
+    padding: 12px 0
+    img
+      width: 80%
   .member
     width: 98%
 
