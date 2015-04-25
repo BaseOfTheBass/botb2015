@@ -65,24 +65,30 @@ class Members
     $bio.className = 'memberDescription'
     $bio.innerHTML = helper.htmlize memberData.bio
 
-    $media = create('ul')
-    $media.className = "memberLinks"
-    for key, value of memberData.media
-      $mediaItem = create('li')
-      url = makeMediaUrl key, value
-      $mediaItem.innerHTML = "<a href='#{url}'>#{key}</a>"
-      $media.appendChild $mediaItem
-
     $info.appendChild $bio
-    $info.appendChild $media
+
+
+    if memberData.media
+      $media = create('ul')
+      $media.className = "memberLinks"
+
+      for key, value of memberData.media
+        $mediaItem = create('li')
+        url = makeMediaUrl key, value
+        $mediaItem.innerHTML = "<a href='#{url}'>#{key}</a>"
+        $media.appendChild $mediaItem
+
+      $info.appendChild $media
+
     $container.appendChild $info
 
-    $product = document.createElement('div')
-    $product.className = 'memberProduct'
-    $product.id = "memberProduct_#{memberData.id}"
-    $container.appendChild $product
+    if memberData.media
+      $product = document.createElement('div')
+      $product.className = 'memberProduct'
+      $product.id = "memberProduct_#{memberData.id}"
+      $container.appendChild $product
 
-    getLatestProduct $product, memberData
+      getLatestProduct $product, memberData
 
     $target.appendChild $container
 

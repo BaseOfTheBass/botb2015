@@ -4,8 +4,7 @@
     "name": "leo9",
     "image": "/resources/profiles/leo9.jpg",
     "bio": "ORGANIZE EVENTS",
-    "tags": ["organize"],
-    "media":{"hoge":"hoge"}
+    "tags": ["organize"]
   },{
     "id": 2,
     "name": "AkiHito*",
