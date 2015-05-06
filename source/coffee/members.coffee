@@ -48,25 +48,24 @@ class Members
     $name = create('h3')
     $name.innerHTML = memberData.name
 
-    $tags = create('p')
-    $tags.className = 'memberTags'
-    $tags.innerHTML = memberData.tags.join(', ')
-
     $icon.appendChild $img
     $icon.appendChild $name
-    $icon.appendChild $tags
     $container.appendChild $icon
 
     # INFO
     $info = create('div')
     $info.className = 'memberInfo'
 
+    $tags = create('p')
+    $tags.className = 'memberTags'
+    $tags.innerHTML = memberData.tags.join(', ')
+
     $bio = create('p')
     $bio.className = 'memberDescription'
     $bio.innerHTML = helper.htmlize memberData.bio
 
     $info.appendChild $bio
-
+    $info.appendChild $tags
 
     if memberData.media
       $media = create('ul')
