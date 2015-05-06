@@ -9,7 +9,7 @@ ColorDarkPrimary   = #455A64
 ColorPrimary       = #607D8B
 ColorLightPrimary  = #CFD8DC
 ColorTextPrimary   = #FFFFFF
-ColorAccent        = #FF4081
+ColorAccent        = #2962ff
 ColorPrimaryText   = #212121
 ColorSecondaryText = #727272
 ColorDivider       = #B6B6B6
@@ -33,7 +33,7 @@ vendor(prop, args)
 // ------------------------------
 
 html
-  background: ColorDivider
+  background: #fff
   background-size: cover
   height: 100%
   font-size: base_font
@@ -104,72 +104,88 @@ ul#navigation
 // member profiles
 #members
   margin: 0
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  align-items: stretch
+  &:after
+    content ""
+    display: block
+    clear: both
 
 .member
-  margin: 2%
-  background: ColorLightPrimary
-  padding: 0
+  background: #fdfdfd
+  margin: 1%
+  padding: 2% 0
   border-radius: 8px
-  width: 46%
-  min-width:300px
+  width: 45%
   float: left
+  box-shadow: 0 0 10px
 
   .memberIcon
-    background: ColorPrimary
     border-radius: 8px 8px 0 0
     text-align: center
     margin: 0
-    padding: 24px
+    width: 40%;
+    float: left;
     img
-      box-shadow: 2px 2px 2px ColorDarkPrimary;
-      width: 180px
-      border-radius: 180px;
+      box-shadow: 0 0 6px
+      width: 50%
+      border-radius: 180px
 
     h3
       text-align: center
-      margin: 0
+      margin: 0 0 0.2rem
       padding: 8px 0 0
-    .memberTags
-      margin: 0
-      padding: 0
+      font-size: 1.2rem
 
 
   .memberInfo
-    margin: 8px 24px
-    .memberDescription
-      width: 42%
-      //display: inline-block
-      float: left
-    .memberLinks
-      width: 42%
-      //display: inline-block
-      float: right
-      list-style: none
-      li
-        margin: 3px
-        list-style: none
-        a
-          color: ColorPrimaryText
-          display: block
-          padding: 5px
-          &:hover
-            background: rgba(256,256,256,0.3)
+    width: 60%
+    float: right
+    margin: 0 0 0.2rem
+    padding: 1rem 0 0
     &:after
       content: "."
       display: block
       height: 1px
       overflow: hidden
       clear: both
+    .memberDescription
+      margin: 0 0 1rem
+      //display: inline-block
+    .memberTags
+      font-size: 0.8rem
+    .memberLinks
+      margin: 1rem 0 0
+      padding: 0
+      list-style: none
+      li
+        margin: 0 0 0.3rem
+        padding: 0
+        list-style: none
+        a
+          font-size: 0.8rem
+          display: block
+          &:hover
+            background: rgba(256,256,256,0.3)
 
 .memberProduct
+  clear: both
+  margin: 0 auto
+  padding: 1rem 0 0 10%
+  width: 80%
+  border-top: solid 1px ColorLightPrimary
   .memberProductImage
-    width: 40%
-    text-align: center
+    width: 30%
     float: left
+    margin: 0
+    img
+      width: 100%
   h3
-    width: 60%
+    width: 69%
     float: left
-    padding: 20px 0 0
+    padding: 0 0 0 1%
     font-size: 1rem
     font-weight: normal
   a
@@ -195,8 +211,9 @@ ul#navigation
   .member
     width: 98%
 
-
-
+@media screen and (min-width: 980px)
+  .member
+    width: 28%
 // ------------------------------
 // Parts
 // ------------------------------
