@@ -50,4 +50,15 @@ class MainApp < Sinatra::Base
     content_type "text/javascript"
     res
   end
+
+  get '/api/bio/*' do
+    datafetch = Datafetch.new()
+    members = Members.new()
+
+    res = members.getProf(datafetch.getData("bio",params[:splat][0]))
+
+    content_type "text/javascript"
+    res
+  end
+
 end

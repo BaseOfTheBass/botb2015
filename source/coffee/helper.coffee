@@ -5,15 +5,15 @@ class Helper
   $id: (id) ->
     return document.getElementById id
 
-  getJson: (url,cb) ->
+  getJson: (url,cb, opt) ->
     xhr = new XMLHttpRequest()
     xhr.open 'GET', url
 
     xhr.onreadystatechange = () ->
       if xhr.readyState == 4 && xhr.status == 200
-        cb xhr.responseText
+        cb xhr.responseText,opt
       else if xhr.readyState == 4 && xhr.status != 200
-        error xhr.status
+        error xhr.status,opt
       return this
 
     xhr.send()
