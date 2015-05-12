@@ -10,7 +10,8 @@ class Datafetch
     apis = {
       'vimeo'=>"http://vimeo.com/api/v2/#{account}/videos.json",
       'soundcloud'=>"http://api.soundcloud.com/users/#{account}/tracks.json?client_id=660f0a677cd5572e6c06dc951c79d052",
-      'mixcloud' =>"http://api.mixcloud.com/#{account}/cloudcasts/"
+      'mixcloud' =>"http://api.mixcloud.com/#{account}/cloudcasts/",
+      'bio' => "http://api.mixcloud.com/#{account}/"
     }
     # undefined channel
     if !apis[channel] then

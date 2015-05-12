@@ -11,4 +11,9 @@ class Members
 
     return nil
   end
+
+  def getProf(bio)
+    return bio
+  end
+
 end

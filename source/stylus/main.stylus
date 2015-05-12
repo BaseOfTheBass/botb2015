@@ -144,7 +144,7 @@ ul#navigation
     width: 60%
     float: right
     margin: 0 0 0.2rem
-    padding: 1rem 0 0
+    padding: 0.2rem 0 0
     &:after
       content: "."
       display: block
@@ -152,12 +152,20 @@ ul#navigation
       overflow: hidden
       clear: both
     .memberDescription
-      margin: 0 0 1rem
+      width: 90%
+      padding: 0 1rem 0 0
+      margin: 0
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
       //display: inline-block
+      a
+        font-size: 0.8rem
     .memberTags
       font-size: 0.8rem
     .memberLinks
-      margin: 1rem 0 0
+      margin: 0.2rem 0 0
       padding: 0
       list-style: none
       li

@@ -43,7 +43,7 @@ class Members
     $icon.className = 'memberIcon'
 
     $img = create('img')
-    $img.src = memberData.image
+    $img.id = "memberImage_#{memberData.id}"
 
     $name = create('h3')
     $name.innerHTML = memberData.name
@@ -61,8 +61,9 @@ class Members
     $tags.innerHTML = memberData.tags.join(', ')
 
     $bio = create('p')
+    $bio.id = "memberDescription_#{memberData.id}"
     $bio.className = 'memberDescription'
-    $bio.innerHTML = helper.htmlize memberData.bio
+    $bio.innerHTML = "-"
 
     $info.appendChild $bio
     $info.appendChild $tags
@@ -90,6 +91,7 @@ class Members
       getLatestProduct $product, memberData
 
     $target.appendChild $container
+    getBio memberData
 
   makeMediaUrl = (media,account) ->
     switch media
@@ -140,6 +142,25 @@ class Members
     wrap.appendChild(title)
     $product = helper.$id "memberProduct_#{json.id}"
     $product.appendChild wrap
+    return
+
+  getBio = (data) ->
+    url = "/api/bio/#{data.media.mixcloud}"
+    helper.getJson url, gotBio, {data: data}
+    return
+
+  window.gotBio = (json,data) ->
+    json  = JSON.parse json
+    data  = data.data
+    id = data.id
+    bio = json.biog
+    image = json.pictures.large
+    $img = helper.$id "memberImage_#{data.id}"
+    $bio = helper.$id "memberDescription_#{data.id}"
+
+    $img.src = image
+    $bio.innerHTML = helper.htmlize bio
+
     return
 
 module.exports = Members
